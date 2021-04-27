@@ -1,0 +1,138 @@
+# ===================================================================
+# Eureka specific properties
+# ===================================================================
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://admin:${jhipster.registry.password}@tomcatmsregistry:8080/eureka/
+
+# ===================================================================
+# Spring specific properties
+# ===================================================================
+spring:
+    application:
+        url: http://andjeaplicacion-srv1.ithbt.co:8080
+    profiles:
+        active: pruhbt
+        include: swagger
+    devtools:
+        restart:
+            enabled: true
+    datasource:
+        url: jdbc:sqlserver://169.61.38.62:1433;databaseName=EKOGUI2
+        username: sij
+        password: 99W2jcLiZDBUvZCXyFKb
+    jpa:
+        show-sql: true
+        properties:
+            hibernate.search.default:
+                directory_provider: filesystem
+                indexBase: ${user.dir}/index/defaultr
+    data:
+        solr:
+             host: http://andjeaplicacion-srv2.ithbt.co:8983/solr
+
+# ===================================================================
+# Liquibase specific properties
+# ===================================================================
+
+liquibase:
+    contexts: pruhbt
+    default-schema: sij
+    parameters:
+        schemas:
+            ekogui_db: EKOGUI
+            ekogui2_db: EKOGUI2
+            ekogui_defensa_db: EKOGUI2_DEFENSA
+            ekogui_fichas_db: EKOGUI2_FICHAS
+            ekogui_pagos_db: EKOGUI2_PAGOS
+
+# ===================================================================
+# Server specific properties
+# ===================================================================
+
+server:
+    host: andjeaplicacion-srv1.ithbt.co
+    address: tomcatmsjudiciales
+    port: 8080
+
+# ===================================================================
+# JHipster specific properties
+# ===================================================================
+
+jhipster:
+    security:
+        authentication:
+            jwt:
+                secret: a74c3a40eab35e25a920cc2cdd0639d36a90dc14
+    mail:
+        base-url: http://andjeaplicacion-srv1.ithbt.co:8080
+        
+# ===================================================================
+# Security specific properties
+# ===================================================================
+
+security:
+    auth:
+        jwt:
+            secret: c2a260a0b643dd6b695556d951861c3b0b08a862
+        feign:
+            secret: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDQ3xTWVNURU0iLCJqdGkiOiIyMTI0NyIsInBlcm1pc29zIjoiU0VMRUVOVEkiLCJleHAiOjQxMTI0NDQxMDB9.kd9hKUz2D9-jdsA71p4GxdIy8kgwHAmgSexCauT37NLGiFZu7ZKUIdkRBJX_xkaDegpII-BRTjutnaM1RGHTHQ
+# ===================================================================
+# Ekogui specific properties
+# ekogui-msjudiciales-procesosCasos-pru-develop/
+# ===================================================================
+
+application:
+    ekogui:
+        batch:
+            revisarProcesos:
+                cron: 0 0 1 ? * *
+            numeroDias: 7
+            indexacionValorEconomico:
+                cron: 5 0 * * * *
+                chunk:
+                    size: 50
+                    logProgress: true
+        jasperreports:
+            url: http://andjeaplicacion-srv2.ithbt.co:8080/jasperserver
+            login: ekogui2
+            password: ekogui216
+            uri_base_reportes: /reports/Ekogui/cap/
+            urlBaseReportes: jasperreports/
+            urlBaseImagesReportes: jasperreports/images/
+        archivos:
+            ruta:
+                base: /ekogui/base-qa-develop
+                tempReportesJasper: /tempReportesJasper
+                tmp_anexos_sgd: /tmp_anexos_sgd
+                metodologiaCR: /metodologiaCR
+            pagination: 3000
+        solr:
+            urlSolr: http://andjeaplicacion-srv2.ithbt.co:8983/solr/
+            indiceProcesosCasos: ekogui-msjudiciales-procesosCasos-pruebas
+            coresIndexarAuntomaticamente: ekogui-msjudiciales-procesosCasos-pruebas
+            cronIndexacionAutomatica: 0 0/30 * * * ?
+            facetCausIdProceso : caus_id
+            facetSucaIdProceso : suca_id
+            facetTipoProceso : tipr_id
+            facetEstadoProceso : esta_codigo
+            facetJurisdiccionProceso : juris_id
+            facetAccionJudicialProceso : acju_id
+            facetProcesoRelacionadoNumProceso : prre_numero_proceso
+            paramFragSizeProceso : hl.fragsize
+            valueFragSizeProceso : 250
+            rowsPagination : 10
+
+        cuantificacion_riesgo:
+            alto : 92
+            medio_alto : 65
+            medio_bajo : 35
+            bajo : 8
+        agencia:
+            id: 2
+        configuracion_actuacion:
+            instancia: 1
+            etapa: 9
+catalina_home: ./

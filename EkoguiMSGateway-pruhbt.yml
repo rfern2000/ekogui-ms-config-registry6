@@ -1,0 +1,101 @@
+# ===================================================================
+# Eureka specific properties
+# ===================================================================
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://admin:${jhipster.registry.password}@tomcatmsregistry:8080/eureka/
+
+# ===================================================================
+# Spring specific properties
+# ===================================================================
+
+spring:
+    profiles:
+        active: pruhbt
+        include: swagger
+    devtools:
+        restart:
+            enabled: true
+    datasource:
+        url: jdbc:sqlserver://169.61.38.62:1433;databaseName=EKOGUI2
+        username: sij
+        password: 99W2jcLiZDBUvZCXyFKb
+    jpa:
+        show-sql: true
+        properties:
+            hibernate.default_schema: sij
+
+    social:
+        ekogui:
+            clientId: oITD19P8bZ0_OktEXG81IPpA3h4a
+            clientSecret: 8CYw72wl7Rc1x8bdO1p4IZlH_NAa
+            host: https://pruebas.defensajuridica.gov.co:9443
+
+# ===================================================================
+# Liquibase specific properties
+# ===================================================================
+
+liquibase:
+    contexts: pruhbt
+    defaultSchema: sij
+
+# ===================================================================
+# Server specific properties
+# ===================================================================
+
+server:
+    port: 8080
+    address: 127.0.0.1
+# ===================================================================
+# JHipster specific properties
+# ===================================================================
+
+jhipster:
+    mail:
+        base-url: http://andjeaplicacion-srv1.ithbt.co:8080
+    security:
+        authentication:
+            jwt:
+                secret: a74c3a40eab35e25a920cc2cdd0639d36a90dc14
+
+# ===================================================================
+# Security specific properties
+# ===================================================================
+
+security:
+    auth:
+        jwt:
+            secret: a74c3a40eab35e25a920cc2cdd0639d36a90dc14
+        feign:
+            secret: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDQ3xTWVNURU0iLCJqdGkiOiIyMTI0NyIsInBlcm1pc29zIjoiU0VMRUVOVEkiLCJleHAiOjQxMDI0NDQ4MDB9.ebwszJrpavK9tfh4bLOjNGk_PpvEC1-XtuUbmvluB5vusWMrHYV9t6o0mESofiO8eVScQSJXeQG9rplOp4ruAQ
+
+# ===================================================================
+# Ekogui specific properties
+# ===================================================================
+
+ekogui:
+    public:
+        enlaces:
+            ekogui1: https://cap.ekogui.gov.co/eKoguiCapacitacion
+            ekogui2: http://andjeaplicacion-srv1.ithbt.co:8080
+            enlacesInteres:
+                tutorialesVideos: http://devservices.ekogui.gov.co/ekogui/#
+                peguntasFrecuentes: http://devservices.ekogui.gov.co/ekogui/#
+                mapaSitio: http://devservices.ekogui.gov.co/ekogui/#
+            footer:
+                politicaDatos: http://devservices.ekogui.gov.co/ekogui/
+            seguridad:
+                login: http://andjeaplicacion-srv1.ithbt.co:8080
+                logout: https://pruebas.defensajuridica.gov.co:9443/commonauth?commonAuthLogout=true&type=oauth2
+        parametros:
+            timeout: 0
+
+menu: 
+    base: 
+        ekogui2: http://andjeaplicacion-srv1.ithbt.co:8580/ekogui/
+        ekoguims: http://andjeaplicacion-srv1.ithbt.co:8080/
+    opciones:
+        mostrarMenuCompleto: true
+catalina_home: ./

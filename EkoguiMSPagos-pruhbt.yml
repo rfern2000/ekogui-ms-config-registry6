@@ -1,0 +1,102 @@
+# ===================================================================
+# Eureka specific properties
+# ===================================================================
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://admin:${jhipster.registry.password}@tomcatmsregistry:8080/eureka/
+
+# ===================================================================
+# Spring specific properties
+# ===================================================================
+
+spring:
+    application:
+        url: http://andjeaplicacion-srv1.ithbt.co:8080
+    profiles:
+        active: pruhbt
+        include: swagger
+    devtools:
+        restart:
+            enabled: true
+    datasource:
+        url: jdbc:sqlserver://169.61.38.62:1433;databaseName=EKOGUI2_PAGOS
+        username: sij
+        password: 99W2jcLiZDBUvZCXyFKb
+    jpa:
+        show-sql: true
+    data:
+        solr:
+             host: http://andjeaplicacion-srv2.ithbt.co:8983/solr
+# ===================================================================
+# Liquibase specific properties
+# ===================================================================
+
+liquibase:
+    contexts: pruhbt
+    default-schema: sij
+    parameters:
+        schemas:
+            ekogui_db: EKOGUI
+            ekogui2_db: EKOGUI2
+            ekogui_defensa_db: EKOGUI2_DEFENSA
+            ekogui_fichas_db: EKOGUI2_FICHAS
+
+# ===================================================================
+# Server specific properties
+# ===================================================================
+
+server:
+    host: andjeaplicacion-srv1.ithbt.co
+    address: tomcatmspagos
+    port: 8080
+
+# ===================================================================
+# JHipster specific properties
+# ===================================================================
+
+jhipster:
+    security:
+        authentication:
+            jwt:
+                secret: c2a260a0b643dd6b695556d951861c3b0b08a862
+    mail:
+        base-url: http://andjeaplicacion-srv1.ithbt.co:8080
+
+# ===================================================================
+# Security specific properties
+# ===================================================================
+
+security:
+    auth:
+        jwt:
+            secret: c2a260a0b643dd6b695556d951861c3b0b08a862
+        feign:
+            secret: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDQ3xTWVNURU0iLCJqdGkiOiIyMTI0NyIsInBlcm1pc29zIjoiU0VMRUVOVEkiLCJleHAiOjE1MjY1MjMyMjV9.Az40qPXUEqzi6QKDtBugW55Xdqo-HBvH2YoMET7A2cUS7crRAFrS0q8wcAXOSZhGSvAFLTvRMEand-_xdQEBeA
+
+
+# ===================================================================
+# Ekogui specific properties
+# ===================================================================
+
+application:
+    ekogui:
+        batch:
+            programacionArchivo:
+                cron: 0 */2 * ? * *
+            procesamientoArchivo:
+                cron: 0 */5 * ? * *
+        archivo:
+            ruta:
+                base: /ekogui/base-qa-develop/pagos
+                dirPendientes: /cargueArchivos/archivos_pendientes
+                dirProcesar: /cargueArchivos/archivos_a_procesar
+                dirProcesados: /cargueArchivos/archivos_procesados
+                dirReportes: /reportes
+        solr:
+            urlSolr: http://andjeaplicacion-srv2.ithbt.co:8983/solr/
+            indiceProcesosCasos: mspagos-procesosCasos/
+            coresIndexarAuntomaticamente: mspagos-procesosCasos
+            cronIndexacionAutomatica: 0 0 21 5 * ?
+catalina_home: ./

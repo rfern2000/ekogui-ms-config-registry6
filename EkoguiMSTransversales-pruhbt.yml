@@ -1,0 +1,127 @@
+# ===================================================================
+# Eureka specific properties
+# ===================================================================
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://admin:${jhipster.registry.password}@tomcatmsregistry:8080/eureka/
+
+# ===================================================================
+# Spring specific properties
+# ===================================================================
+
+spring:
+    profiles:
+        active: pruhbt
+        include: swagger
+    devtools:
+        restart:
+            enabled: true
+    datasource:
+        url: jdbc:sqlserver://169.61.38.62:1433;databaseName=EKOGUI2
+        username: sij
+        password: 99W2jcLiZDBUvZCXyFKb
+    jpa:
+        show-sql: false
+        properties:
+            hibernate.default_schema: sij
+
+# ===================================================================
+# Liquibase specific properties
+# ===================================================================
+
+liquibase:
+    contexts: pruhbt
+    default-schema: sij
+    parameters:
+        schemas:
+            ekogui_db: EKOGUI
+            ekogui2_db: EKOGUI2
+            ekogui_defensa_db: EKOGUI2_DEFENSA
+            ekogui_fichas_db: EKOGUI2_FICHAS
+
+# ===================================================================
+# Server specific properties
+# ===================================================================
+
+server:
+    host: andjeaplicacion-srv1.ithbt.co
+    address: tomcatmstransversales
+    port: 8080
+
+# ===================================================================
+# JHipster specific properties
+# ===================================================================
+
+jhipster:
+    security:
+        authentication:
+            jwt:
+                secret: a74c3a40eab35e25a920cc2cdd0639d36a90dc14
+    mail:
+        base-url: http://andjeaplicacion-srv1.ithbt.co:8080
+
+security:
+    auth:
+        jwt:
+            secret: a74c3a40eab35e25a920cc2cdd0639d36a90dc14
+        feign:
+            secret: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDQ3xTWVNURU0iLCJqdGkiOiIyMTI0NyIsInBlcm1pc29zIjoiU0VMRUVOVEkiLCJleHAiOjE1MjY1MjMyMjV9.pHfkDeTUvRrLKyCtMY7sqbXfxChpO__EsgkfU2M4FmjJtBO7q-uUoI6EkZzEXOaUT2W7nwq7mJiuF6O-UmumXg
+
+# ===================================================================
+# Ekogui specific properties
+# ===================================================================
+
+application:
+    url-pdf-procesos:
+        judiciales: https://cap.ekogui.gov.co/ekoguims/ekoguimstransversales/api/reporte/judicial/%d
+        extrajudiciales: https://cap.ekogui.gov.co/ekoguims/ekoguimstransversales/api/reporte/extrajudicial/%d
+        arbitrales: http://andjeaplicacion-srv1.ithbt.co:8580/ekogui/api/jrs/generarFichaProcesoArbitral/%d/%d
+        judiciales2: http://andjeaplicacion-srv1.ithbt.co:8080/ekoguimsjudiciales/api/procesos/%d/%d/pdf
+    jasperreports:
+        ekoguiDb: EKOGUI
+        ekoguiDefensaDb: EKOGUI2_DEFENSA
+        ekoguiFichasDb: EKOGUI2_FICHAS
+        ekoguiAnaliticaDb: EKOGUI2_ANALITICA
+    apiManager:
+        uri: http://192.168.90.154:8282
+        username: ekogui2-app
+        consumerKey: aHCoHPZ0JTaWzIBuByb96IgTwVca
+        consumerSecret: 3aR4JJ1ni9IfglfFZIbJNrgWFiYa
+    orfeo:
+        token:
+            keyIdentidad: 06ba6348c8fb64fd7d801f0cc8284d76f9f90973e681e519b3d9980de38463f9
+            usuario: dalmantan
+            aplicativo: eKogui
+        login: ekogui
+        loginDest: CLASIFICADOR405
+        dependenciaArbitramento: 405
+        tipo_proceso:
+            arbitramento:
+                codiSRD: 26
+                codiSBRD: 10
+        uri: http://192.168.10.44
+        path: orfeoP/Modulos/webServices/index.php
+    batch:
+        confirmarIndexacion:
+            #Cada hora (a los 5 segundos)
+            cron: 5 0 * * * *
+        reintentoGuardarArchivo:
+            cron: 0 0 0 ? * *
+            reintentosPermitidos: 3
+        borradoArchivos:
+            cron: 0 * * ? * *
+            #Separados por ,
+            extensionesArchivos: tmp,temp
+            minimoHorasExistencia: 2
+        generacionArchivosJob:
+            cron: 0 */10 * ? * *
+    archivos:
+        ubicacion: /tmp/ng-flow
+        ruta:
+            base: /tmp/ng-flow
+            providencia: /tmp/ng-flow
+    pentaho:
+        usuario: ekogui
+        password: FtZ4lBPFa8
