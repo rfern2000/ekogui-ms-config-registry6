@@ -20,7 +20,7 @@ spring:
         restart:
             enabled: true
     datasource:
-        url: jdbc:sqlserver://169.61.38.62:1433;databaseName=EKOGUI2
+        url: jdbc:sqlserver://150.238.99.182:1433;databaseName=EKOGUI2
         username: sij
         password: 99W2jcLiZDBUvZCXyFKb
     jpa:
