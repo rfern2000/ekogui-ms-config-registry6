@@ -113,7 +113,7 @@ application:
             urlSolr: http://andjeaplicacion-srv2.ithbt.co:8983/solr/
             indiceProcesosCasos: ekogui-msjudiciales-procesosCasos-pruebas
             coresIndexarAuntomaticamente: ekogui-msjudiciales-procesosCasos-pruebas
-            cronIndexacionAutomatica: 0 0/30 * * * ?
+            cronIndexacionAutomatica: 0 1 1 * * ?
             facetCausIdProceso : caus_id
             facetSucaIdProceso : suca_id
             facetTipoProceso : tipr_id
