@@ -76,7 +76,7 @@ jhipster:
 security:
     auth:
         jwt:
-            secret: c2a260a0b643dd6b695556d951861c3b0b08a862
+            secret: a74c3a40eab35e25a920cc2cdd0639d36a90dc14
         feign:
             secret: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDQ3xTWVNURU0iLCJqdGkiOiIyMTI0NyIsInBlcm1pc29zIjoiU0VMRUVOVEkiLCJleHAiOjQxMTI0NDQxMDB9.kd9hKUz2D9-jdsA71p4GxdIy8kgwHAmgSexCauT37NLGiFZu7ZKUIdkRBJX_xkaDegpII-BRTjutnaM1RGHTHQ
 # ===================================================================
