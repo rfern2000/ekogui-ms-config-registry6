@@ -26,9 +26,9 @@ spring:
         password: 99W2jcLiZDBUvZCXyFKb
     jpa:
         show-sql: true
-    data:
-        solr:
-             host: http://andjeaplicacion-srv2.ithbt.co:8983/solr
+#    data:
+#        solr:
+#             host: http://andjeaplicacion-srv2.ithbt.co:8983/solr
 # ===================================================================
 # Liquibase specific properties
 # ===================================================================
