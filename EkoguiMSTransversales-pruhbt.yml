@@ -118,10 +118,10 @@ application:
         generacionArchivosJob:
             cron: 0 */10 * ? * *
     archivos:
-        ubicacion: /tmp/ng-flow
+        ubicacion: /tmp_anexos_sgd
         ruta:
-            base: /tmp/ng-flow
-            providencia: /tmp/ng-flow
+            base: /ekogui
+            providencia: /providencias
     pentaho:
         usuario: ekogui
         password: FtZ4lBPFa8
