@@ -29,9 +29,9 @@ spring:
             hibernate.search.default:
                 directory_provider: filesystem
                 indexBase: ${user.dir}/index/defaultr
-#    data:
-#        solr:
-#             host: http://andjeaplicacion-srv2.ithbt.co:8983/solr
+    data:
+        solr:
+             host: http://andjeaplicacion-srv2.ithbt.co:8983/solr
 
 # ===================================================================
 # Liquibase specific properties
