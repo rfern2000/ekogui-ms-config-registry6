@@ -73,7 +73,7 @@ security:
         jwt:
             secret: c2a260a0b643dd6b695556d951861c3b0b08a862
         feign:
-            secret: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDQ3xTWVNURU0iLCJqdGkiOiIyMTI0NyIsInBlcm1pc29zIjoiU0VMRUVOVEkiLCJleHAiOjE1MjY1MjMyMjV9.Az40qPXUEqzi6QKDtBugW55Xdqo-HBvH2YoMET7A2cUS7crRAFrS0q8wcAXOSZhGSvAFLTvRMEand-_xdQEBeA
+            secret: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDQ3xTWVNURU0iLCJqdGkiOiIyMTI0NyIsInBlcm1pc29zIjoiU0VMRUVOVEkiLCJleHAiOjQxMTI0NDQxMDB9.kd9hKUz2D9-jdsA71p4GxdIy8kgwHAmgSexCauT37NLGiFZu7ZKUIdkRBJX_xkaDegpII-BRTjutnaM1RGHTHQ
 
 
 # ===================================================================
