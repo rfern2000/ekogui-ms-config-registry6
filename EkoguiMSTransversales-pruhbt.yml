@@ -67,7 +67,7 @@ security:
         jwt:
             secret: a74c3a40eab35e25a920cc2cdd0639d36a90dc14
         feign:
-            secret: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDQ3xTWVNURU0iLCJqdGkiOiIyMTI0NyIsInBlcm1pc29zIjoiU0VMRUVOVEkiLCJleHAiOjE1MjY1MjMyMjV9.pHfkDeTUvRrLKyCtMY7sqbXfxChpO__EsgkfU2M4FmjJtBO7q-uUoI6EkZzEXOaUT2W7nwq7mJiuF6O-UmumXg
+            secret: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDQ3xTWVNURU0iLCJqdGkiOiIyMTI0NyIsInBlcm1pc29zIjoiU0VMRUVOVEkiLCJleHAiOjQxMTI0NDQxMDB9.kd9hKUz2D9-jdsA71p4GxdIy8kgwHAmgSexCauT37NLGiFZu7ZKUIdkRBJX_xkaDegpII-BRTjutnaM1RGHTHQ
 
 # ===================================================================
 # Ekogui specific properties
