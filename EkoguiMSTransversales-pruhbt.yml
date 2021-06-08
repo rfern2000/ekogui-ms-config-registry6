@@ -85,7 +85,7 @@ application:
         ekoguiFichasDb: EKOGUI2_FICHAS
         ekoguiAnaliticaDb: EKOGUI2_ANALITICA
     apiManager:
-        uri: http://192.168.90.153:8282        
+        uri: http://pruebas.defensajuridica.gov.co:8282
         username: ekogui2-app
         password: Welcome1@
         consumerKey: 4lnr5VzD4tyOwsvGqU8RrQH0CKAa
@@ -106,7 +106,7 @@ application:
             arbitramento:
                 codiSRD: 26
                 codiSBRD: 10
-        uri: http://192.168.10.44
+        uri: https://orfeocap.defensajuridica.gov.co
         path: orfeo/Modulos/webServices/index.php        
     batch:
         confirmarIndexacion:
